@@ -1,0 +1,139 @@
+/* =============================================
+   THE HAIR COMPANY — RESPONSIVE STYLES
+   Mobile-first breakpoints
+   ============================================= */
+
+/* ---- TABLET: max 1024px ---- */
+@media (max-width: 1024px) {
+  .grid-4, .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  .instagram-grid { grid-template-columns: repeat(4, 1fr); }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: auto; }
+  .gallery-item:first-child { grid-column: span 1; grid-row: span 1; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .location-info { padding: 60px 40px; }
+}
+
+/* ---- TABLET PORTRAIT: max 900px ---- */
+@media (max-width: 900px) {
+  .nav-links, .nav-cta, .nav-tel { display: none; }
+  .nav-hamburger { display: flex; }
+  .nav-drawer { display: flex; }
+
+  .grid-2 { grid-template-columns: 1fr; gap: 40px; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+
+  .about-teaser .img-badge { right: 10px; bottom: -20px; }
+  .about-content { padding-left: 0; }
+
+  .newsletter-inner { padding: 60px 40px; }
+
+  .location-strip { grid-template-columns: 1fr; }
+  .map-block { height: 400px; }
+
+  .booking-banner-inner { flex-direction: column; text-align: center; }
+
+  .section { padding: 80px 0; }
+
+  .intro-strip-inner { gap: 32px; }
+}
+
+/* ---- MOBILE: max 640px ---- */
+@media (max-width: 640px) {
+  .section { padding: 64px 0; }
+
+  .services-grid, .blog-grid, .grid-3 { grid-template-columns: 1fr; }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .gallery-item:first-child { grid-column: span 2; }
+
+  .team-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+
+  .stats-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+
+  .instagram-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .testimonial-slide { padding: 0 20px; }
+
+  .newsletter-inner { padding: 48px 24px; }
+  .newsletter-form { flex-direction: column; }
+  .newsletter-form input, .newsletter-form .btn { width: 100%; }
+
+  .hero-ctas { flex-direction: column; }
+  .hero-ctas .btn { width: 100%; justify-content: center; }
+
+  .hero-trust { gap: 24px; }
+
+  .about-features { grid-template-columns: 1fr; }
+
+  .location-info { padding: 48px 24px; }
+
+  .footer-bottom { flex-direction: column; text-align: center; }
+  .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
+
+  .float-booking { bottom: 20px; right: 20px; }
+
+  .btn-lg { padding: 15px 28px; font-size: .9rem; }
+
+  .page-hero { padding: 140px 0 72px; }
+
+  .hours-grid { grid-template-columns: 1fr; }
+
+  .intro-strip-inner {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  h2 { font-size: 2rem; }
+}
+
+/* ---- SMALL MOBILE: max 400px ---- */
+@media (max-width: 400px) {
+  .team-grid { grid-template-columns: 1fr; }
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item:first-child { grid-column: span 1; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
+  .hero-trust { flex-direction: column; gap: 16px; }
+}
+
+/* ---- STICKY MOBILE BOOKING BAR ---- */
+.mobile-booking-bar {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 850;
+  padding: 12px 16px;
+  background: var(--espresso);
+  box-shadow: 0 -4px 24px rgba(0,0,0,.2);
+  gap: 12px;
+}
+@media (max-width: 640px) {
+  .mobile-booking-bar { display: flex; }
+  body { padding-bottom: 70px; }
+}
+.mobile-booking-bar a {
+  flex: 1;
+  text-align: center;
+  padding: 13px;
+  border-radius: var(--radius);
+  font-weight: 700;
+  font-size: .85rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  font-family: 'Raleway', sans-serif;
+}
+.mobile-bar-book { background: var(--bronze); color: var(--white); }
+.mobile-bar-call { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.3); }
+
+/* ---- PRINT ---- */
+@media print {
+  .site-header, .float-booking, .cookie-banner, .mobile-booking-bar, .back-to-top { display: none !important; }
+  body { padding-bottom: 0 !important; }
+}

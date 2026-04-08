@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hair tips, colour trends, styling advice, and behind-the-scenes stories from The Hair Company Galway. Expert knowledge from our team of stylists.">
+  <meta name="keywords" content="hair tips Galway, hair care advice Ireland, balayage trends Galway, wedding hair advice Galway, hair blog Ireland">
+  <link rel="canonical" href="https://thehaircompany.ie/blog.html">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <title>Blog & Hair Tips | The Hair Company Galway</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .blog-page-grid { display: grid; grid-template-columns: 1fr 340px; gap: 60px; align-items: start; }
+    .blog-main { }
+    .blog-sidebar { position: sticky; top: 120px; }
+    .blog-featured { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-md); margin-bottom: 60px; background: var(--espresso); }
+    .blog-featured-img { height: 420px; overflow: hidden; }
+    .blog-featured-img img { width:100%; height:100%; object-fit:cover; }
+    .blog-featured-body { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+    .blog-featured-body .blog-cat { color: var(--bronze); font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; margin-bottom: 16px; }
+    .blog-featured-body h2 { color: var(--white); font-size: 1.9rem; margin-bottom: 16px; line-height: 1.3; }
+    .blog-featured-body p { color: rgba(255,255,255,.7); margin-bottom: 24px; }
+    .blog-featured-body .blog-meta { color: rgba(255,255,255,.45); font-size: .8rem; margin-bottom: 0; }
+    .blog-grid-4 { display: grid; grid-template-columns: repeat(2,1fr); gap: 28px; margin-bottom: 40px; }
+    .sidebar-widget { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 28px; margin-bottom: 28px; }
+    .sidebar-widget h4 { font-family: 'Raleway',sans-serif; font-size: .75rem; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: var(--espresso); margin-bottom: 20px; }
+    .sidebar-cat { display: flex; flex-direction: column; gap: 10px; }
+    .sidebar-cat a { font-size: .9rem; color: var(--mid-gray); display: flex; justify-content: space-between; transition: color var(--transition); }
+    .sidebar-cat a:hover { color: var(--bronze); }
+    .sidebar-cat a span { background: var(--light-gray); padding: 2px 8px; border-radius: 20px; font-size: .75rem; color: var(--espresso); }
+    .recent-posts { display: flex; flex-direction: column; gap: 16px; }
+    .recent-post { display: flex; gap: 16px; }
+    .recent-post-img { width: 70px; height: 70px; border-radius: var(--radius); overflow: hidden; flex-shrink: 0; background: var(--cream); }
+    .recent-post-img img { width: 100%; height: 100%; object-fit: cover; }
+    .recent-post-text h5 { font-size: .9rem; color: var(--espresso); margin-bottom: 4px; line-height: 1.4; }
+    .recent-post-text h5 a:hover { color: var(--bronze); }
+    .recent-post-text span { font-size: .75rem; color: var(--mid-gray); }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { padding: 6px 14px; background: var(--light-gray); border-radius: 20px; font-size: .75rem; font-weight: 600; color: var(--mid-gray); transition: all var(--transition); cursor: pointer; }
+    .tag:hover { background: var(--espresso); color: var(--white); }
+    .pagination { display: flex; gap: 8px; justify-content: center; margin-top: 48px; }
+    .page-btn { width: 42px; height: 42px; border-radius: var(--radius); border: 1.5px solid var(--light-gray); background: var(--white); display: flex; align-items: center; justify-content: center; font-size: .9rem; font-weight: 600; cursor: pointer; transition: all var(--transition); color: var(--mid-gray); font-family: 'Raleway',sans-serif; }
+    .page-btn:hover, .page-btn.active { background: var(--espresso); border-color: var(--espresso); color: var(--white); }
+    @media (max-width: 1024px) { .blog-page-grid { grid-template-columns: 1fr; } .blog-sidebar { position: static; } }
+    @media (max-width: 640px) { .blog-featured { grid-template-columns: 1fr; } .blog-featured-img { height: 260px; } .blog-featured-body { padding: 28px; } .blog-grid-4 { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-text">The Hair Company</span><span class="logo-sub">Galway, Ireland</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="tel:+35391123456" class="nav-tel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07"/></svg>091 123 456</a>
+      <a href="booking.html" class="btn btn-primary nav-cta">Book Now</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+<div class="nav-drawer">
+  <button class="drawer-close">&#x2715;</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  <a href="booking.html" class="btn btn-primary" style="margin-top:8px;">Book Appointment</a>
+  <a href="tel:+35391123456" class="drawer-tel">091 123 456</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Blog</span></div>
+    <span class="section-label">Hair Inspiration & Advice</span>
+    <h1>From Our Stylists</h1>
+    <p>Expert tips, seasonal trends, and Galway hair stories — straight from the people who know hair best.</p>
+  </div>
+</div>
+
+<!-- BLOG CONTENT -->
+<section class="section">
+  <div class="container">
+    <div class="blog-page-grid">
+
+      <!-- MAIN CONTENT -->
+      <div class="blog-main">
+
+        <!-- Featured Post -->
+        <article class="blog-featured">
+          <div class="blog-featured-img">
+            <img src="assets/images/blog-1.jpg" alt="Balayage trends Galway 2024" loading="lazy" width="600" height="420">
+          </div>
+          <div class="blog-featured-body">
+            <div class="blog-cat">Colour Trends · Featured</div>
+            <h2><a href="blog/balayage-trends-galway.html" style="color:inherit;">The Balayage Looks We're Obsessed With This Season</a></h2>
+            <p>From honey brunette to copper dreams — our colour specialists share the most-requested looks in Galway right now, and tips on how to get the look.</p>
+            <div class="blog-meta">By Siobhán Murphy &nbsp;·&nbsp; April 2026 &nbsp;·&nbsp; 5 min read</div>
+            <a href="blog/balayage-trends-galway.html" class="btn btn-primary" style="margin-top:24px;align-self:flex-start;">Read Article</a>
+          </div>
+        </article>
+
+        <!-- Post Grid -->
+        <div class="blog-grid-4">
+
+          <article class="blog-card">
+            <div class="blog-card-img">
+              <img src="assets/images/blog-2.jpg" alt="Wedding hair Galway" loading="lazy" width="400" height="220">
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Bridal</div>
+              <h4><a href="blog/wedding-hair-galway.html">Wedding Hair in Galway: Everything You Need to Know</a></h4>
+              <p>From choosing your style to the morning timeline — Aoife shares her complete guide for Galway brides.</p>
+              <div class="blog-meta"><span>By Aoife Brennan</span><span>8 min read</span></div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img">
+              <img src="assets/images/blog-3.jpg" alt="Hair care Irish weather" loading="lazy" width="400" height="220">
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Hair Care</div>
+              <h4><a href="blog/hair-care-irish-weather.html">How to Keep Your Hair Looking Great in Galway's Weather</a></h4>
+              <p>Let's talk about humidity, rain, and wind — and how to protect your salon results from the Atlantic.</p>
+              <div class="blog-meta"><span>By Conor O'Brien</span><span>6 min read</span></div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img">
+              <img src="assets/images/blog-4.jpg" alt="Men's hair trends" loading="lazy" width="400" height="220">
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Men's Grooming</div>
+              <h4><a href="blog/mens-hair-trends.html">Men's Hair Trends in Galway: What's Hot Right Now</a></h4>
+              <p>Textured crops, modern fades, and classic cuts — Declan's pick of the best men's styles this year.</p>
+              <div class="blog-meta"><span>By Declan Walsh</span><span>4 min read</span></div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img">
+              <img src="assets/images/blog-5.jpg" alt="Olaplex treatment guide" loading="lazy" width="400" height="220">
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Treatments</div>
+              <h4><a href="blog/olaplex-guide.html">Everything You Need to Know About Olaplex Treatments</a></h4>
+              <p>Is it really worth the hype? Niamh breaks down what Olaplex does, who it's for, and how often you need it.</p>
+              <div class="blog-meta"><span>By Niamh Kelly</span><span>7 min read</span></div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img">
+              <img src="assets/images/blog-6.jpg" alt="Hair extensions guide" loading="lazy" width="400" height="220">
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Extensions</div>
+              <h4><a href="blog/hair-extensions-guide.html">Hair Extensions in Galway: Your Complete Guide</a></h4>
+              <p>Nano ring, tape-in, or micro ring? Aoife explains the differences and helps you choose the right method.</p>
+              <div class="blog-meta"><span>By Aoife Brennan</span><span>9 min read</span></div>
+            </div>
+          </article>
+
+          <article class="blog-card">
+            <div class="blog-card-img">
+              <img src="assets/images/blog-7.jpg" alt="Colour correction guide" loading="lazy" width="400" height="220">
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-cat">Colour</div>
+              <h4><a href="blog/colour-correction-galway.html">Colour Correction: When Things Go Wrong and How We Fix Them</a></h4>
+              <p>Box dye disasters? Wrong salon results? Siobhán explains the colour correction process from start to finish.</p>
+              <div class="blog-meta"><span>By Siobhán Murphy</span><span>10 min read</span></div>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+          <button class="page-btn active">1</button>
+          <button class="page-btn">2</button>
+          <button class="page-btn">3</button>
+          <button class="page-btn">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- SIDEBAR -->
+      <aside class="blog-sidebar">
+        <!-- Search -->
+        <div class="sidebar-widget">
+          <h4>Search</h4>
+          <div style="position:relative;">
+            <input type="search" placeholder="Search articles..." class="form-control" aria-label="Search blog posts" style="padding-right:44px;">
+            <button style="position:absolute;right:12px;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:var(--mid-gray);">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="sidebar-widget">
+          <h4>Categories</h4>
+          <div class="sidebar-cat">
+            <a href="#">All Posts <span>14</span></a>
+            <a href="#">Colour & Balayage <span>4</span></a>
+            <a href="#">Hair Care Tips <span>3</span></a>
+            <a href="#">Bridal <span>2</span></a>
+            <a href="#">Men's Grooming <span>2</span></a>
+            <a href="#">Treatments <span>2</span></a>
+            <a href="#">Extensions <span>1</span></a>
+          </div>
+        </div>
+
+        <!-- Recent Posts -->
+        <div class="sidebar-widget">
+          <h4>Recent Posts</h4>
+          <div class="recent-posts">
+            <div class="recent-post">
+              <div class="recent-post-img"><img src="assets/images/blog-1.jpg" alt="Balayage" loading="lazy"></div>
+              <div class="recent-post-text">
+                <h5><a href="blog/balayage-trends-galway.html">The Balayage Looks We're Obsessed With This Season</a></h5>
+                <span>April 2026</span>
+              </div>
+            </div>
+            <div class="recent-post">
+              <div class="recent-post-img"><img src="assets/images/blog-2.jpg" alt="Wedding" loading="lazy"></div>
+              <div class="recent-post-text">
+                <h5><a href="blog/wedding-hair-galway.html">Wedding Hair in Galway</a></h5>
+                <span>March 2026</span>
+              </div>
+            </div>
+            <div class="recent-post">
+              <div class="recent-post-img"><img src="assets/images/blog-3.jpg" alt="Irish weather" loading="lazy"></div>
+              <div class="recent-post-text">
+                <h5><a href="blog/hair-care-irish-weather.html">Hair Care in Irish Weather</a></h5>
+                <span>March 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tags -->
+        <div class="sidebar-widget">
+          <h4>Popular Tags</h4>
+          <div class="tags">
+            <span class="tag">Balayage</span>
+            <span class="tag">Galway</span>
+            <span class="tag">Colour</span>
+            <span class="tag">Bridal</span>
+            <span class="tag">Olaplex</span>
+            <span class="tag">Men's Hair</span>
+            <span class="tag">Extensions</span>
+            <span class="tag">Keratin</span>
+            <span class="tag">Irish Hair</span>
+            <span class="tag">Hair Care</span>
+          </div>
+        </div>
+
+        <!-- Book CTA -->
+        <div style="background:var(--espresso); border-radius:var(--radius-lg); padding:32px; text-align:center;">
+          <h4 style="color:var(--white); font-family:'Cormorant Garamond',serif; font-size:1.4rem; font-weight:500; margin-bottom:8px;">Ready to Transform?</h4>
+          <p style="color:rgba(255,255,255,.65); font-size:.875rem; margin-bottom:20px;">Turn your hair inspiration into reality. Book with our team today.</p>
+          <a href="booking.html" class="btn btn-primary" style="width:100%;justify-content:center;">Book Now</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="logo-text">The Hair Company</span><span class="logo-sub">Galway, Ireland</span><p>Galway's premier hair salon since 2009.</p><div class="footer-social"><a href="#" aria-label="Instagram">&#xf16d;</a><a href="#" aria-label="Facebook">&#xf09a;</a></div></div>
+      <div class="footer-col"><h5>Quick Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="booking.html">Book Online</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Blog Categories</h5><ul class="footer-links"><li><a href="#">Colour & Balayage</a></li><li><a href="#">Hair Care Tips</a></li><li><a href="#">Bridal</a></li><li><a href="#">Men's Grooming</a></li><li><a href="#">Treatments</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Shop Street, Galway City</span></div><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2"/></svg><a href="tel:+35391123456">091 123 456</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 The Hair Company, Galway.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div></div>
+  </div>
+</footer>
+
+<div class="mobile-booking-bar">
+  <a href="booking.html" class="mobile-bar-book">Book Appointment</a>
+  <a href="tel:+35391123456" class="mobile-bar-call">Call Now</a>
+</div>
+<button class="back-to-top" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<div class="cookie-banner"><div class="cookie-inner"><p class="cookie-text">We use cookies. <a href="cookies.html">Learn more</a></p><div class="cookie-btns"><button class="cookie-accept">Accept</button><button class="cookie-decline">Decline</button></div></div></div>
+<script src="js/main.js" defer></script>
+</body>
+</html>

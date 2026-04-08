@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book your hair appointment at The Hair Company Galway online. Choose your service, stylist, and time — easy, fast, and available 24/7.">
+  <meta name="keywords" content="book hair appointment Galway, online hair booking Galway, hair salon booking Galway Ireland">
+  <link rel="canonical" href="https://thehaircompany.ie/booking.html">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <title>Book an Appointment | The Hair Company Galway</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .booking-layout { display: grid; grid-template-columns: 1fr 400px; gap: 60px; align-items: start; }
+    .booking-main { }
+    .booking-sidebar { position: sticky; top: 120px; }
+    .booking-widget { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-md); overflow: hidden; }
+    .booking-widget-header { background: var(--espresso); padding: 28px 32px; }
+    .booking-widget-header h3 { color: var(--white); margin-bottom: 6px; }
+    .booking-widget-header p { color: rgba(255,255,255,.65); font-size: .875rem; margin: 0; }
+    .booking-widget-body { padding: 32px; }
+    .booking-step { margin-bottom: 32px; }
+    .booking-step h4 { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--mid-gray); margin-bottom: 12px; display: flex; align-items: center; gap: 10px; }
+    .booking-step h4 span { width: 22px; height: 22px; background: var(--bronze); color: var(--white); border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: .7rem; font-weight: 700; }
+    .service-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .service-pill { padding: 8px 18px; border: 1.5px solid var(--light-gray); border-radius: 30px; font-size: .82rem; font-weight: 600; cursor: pointer; transition: all var(--transition); background: var(--white); color: var(--mid-gray); font-family: 'Raleway', sans-serif; }
+    .service-pill:hover, .service-pill.selected { background: var(--espresso); border-color: var(--espresso); color: var(--white); }
+    .stylist-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .stylist-card { border: 1.5px solid var(--light-gray); border-radius: var(--radius); padding: 12px 8px; text-align: center; cursor: pointer; transition: all var(--transition); background: var(--white); }
+    .stylist-card:hover, .stylist-card.selected { border-color: var(--bronze); background: rgba(196,149,106,.06); }
+    .stylist-card .stylist-avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--cream); margin: 0 auto 8px; overflow: hidden; }
+    .stylist-card .stylist-avatar img { width: 100%; height: 100%; object-fit: cover; }
+    .stylist-card .stylist-name { font-size: .75rem; font-weight: 700; color: var(--espresso); }
+    .stylist-card .stylist-level { font-size: .65rem; color: var(--bronze); font-weight: 600; }
+    .time-slots { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .time-slot { padding: 10px 6px; border: 1.5px solid var(--light-gray); border-radius: var(--radius); text-align: center; font-size: .8rem; font-weight: 600; cursor: pointer; transition: all var(--transition); background: var(--white); color: var(--mid-gray); font-family: 'Raleway', sans-serif; }
+    .time-slot:hover, .time-slot.selected { background: var(--bronze); border-color: var(--bronze); color: var(--white); }
+    .time-slot.unavailable { opacity: .4; pointer-events: none; text-decoration: line-through; }
+    .booking-summary { background: var(--cream); border-radius: var(--radius); padding: 20px; margin-bottom: 24px; }
+    .booking-summary h4 { color: var(--espresso); font-family: 'Raleway', sans-serif; font-size: .85rem; font-weight: 700; margin-bottom: 12px; text-transform: uppercase; letter-spacing: .08em; }
+    .summary-row { display: flex; justify-content: space-between; font-size: .875rem; margin-bottom: 6px; }
+    .summary-row .label { color: var(--mid-gray); }
+    .summary-row .value { font-weight: 600; color: var(--espresso); }
+    .summary-divider { border: none; border-top: 1px solid rgba(44,24,16,.1); margin: 12px 0; }
+    .summary-total .label { font-weight: 700; color: var(--espresso); }
+    .summary-total .value { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--bronze); font-weight: 600; }
+    .info-cards { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; margin-bottom: 48px; }
+    .info-card { background: var(--white); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow-sm); display: flex; gap: 16px; }
+    .info-card-icon { width: 44px; height: 44px; background: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bronze); flex-shrink: 0; }
+    .info-card h4 { color: var(--espresso); font-size: 1rem; margin-bottom: 4px; }
+    .info-card p { font-size: .85rem; margin: 0; }
+    .alternative-booking { background: var(--espresso); border-radius: var(--radius-lg); padding: 40px; text-align: center; margin-top: 48px; }
+    .alternative-booking h3 { color: var(--white); margin-bottom: 12px; }
+    .alternative-booking p { color: rgba(255,255,255,.7); margin-bottom: 24px; }
+    .alt-options { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+    .alt-option { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.2); color: var(--white); padding: 16px 28px; border-radius: var(--radius-lg); text-align: center; transition: all var(--transition); font-family: 'Raleway', sans-serif; }
+    .alt-option:hover { background: var(--bronze); border-color: var(--bronze); }
+    .alt-option .alt-icon { font-size: 1.5rem; display: block; margin-bottom: 8px; }
+    .alt-option .alt-label { font-size: .85rem; font-weight: 700; display: block; }
+    .alt-option .alt-sub { font-size: .75rem; opacity: .7; display: block; margin-top: 2px; }
+    @media (max-width: 900px) { .booking-layout { grid-template-columns: 1fr; } .booking-sidebar { position: static; } .info-cards { grid-template-columns: 1fr; } }
+    @media (max-width: 640px) { .stylist-cards { grid-template-columns: repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-text">The Hair Company</span><span class="logo-sub">Galway, Ireland</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a href="tel:+35391123456" class="nav-tel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8"/></svg>091 123 456</a>
+      <a href="booking.html" class="btn btn-primary nav-cta">Book Now</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+<div class="nav-drawer">
+  <button class="drawer-close">&#x2715;</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  <a href="booking.html" class="btn btn-primary" style="margin-top:8px;">Book Appointment</a>
+  <a href="tel:+35391123456" class="drawer-tel">091 123 456</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Booking</span></div>
+    <span class="section-label">Book Online</span>
+    <h1>Reserve Your Appointment</h1>
+    <p>Book 24/7 in just a few steps. Choose your service, pick your stylist, and select a time that works for you.</p>
+  </div>
+</div>
+
+<!-- BOOKING SECTION -->
+<section class="section">
+  <div class="container">
+
+    <!-- Info Cards -->
+    <div class="info-cards">
+      <div class="info-card">
+        <div class="info-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div>
+          <h4>Patch Test Required</h4>
+          <p>New colour clients must complete a patch test 48 hours before their appointment. Please call to arrange.</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        <div>
+          <h4>24-Hour Cancellation Policy</h4>
+          <p>Please give us at least 24 hours' notice to cancel or reschedule. Late cancellations may incur a charge.</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div>
+          <h4>Confirmation Email</h4>
+          <p>You'll receive an email confirmation with all details and a calendar invite for your appointment.</p>
+        </div>
+      </div>
+      <div class="info-card">
+        <div class="info-card-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg></div>
+        <div>
+          <h4>Deposits for Specialist Services</h4>
+          <p>A €25–€50 deposit is required for colour, extensions, and bridal appointments to secure your booking.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="booking-layout">
+
+      <!-- BOOKING FORM -->
+      <div class="booking-main">
+        <form id="booking-form" data-validate action="#" method="POST">
+
+          <!-- Step 1: Service -->
+          <div class="booking-step">
+            <h4><span>1</span> Select Service</h4>
+            <div class="service-pills">
+              <button type="button" class="service-pill" data-price="55" data-duration="60">Wash, Cut & Style</button>
+              <button type="button" class="service-pill" data-price="130" data-duration="180">Balayage</button>
+              <button type="button" class="service-pill" data-price="70" data-duration="90">Full Colour</button>
+              <button type="button" class="service-pill" data-price="90" data-duration="90">Half Head Highlights</button>
+              <button type="button" class="service-pill" data-price="120" data-duration="120">Full Head Highlights</button>
+              <button type="button" class="service-pill" data-price="45" data-duration="45">Olaplex Treatment</button>
+              <button type="button" class="service-pill" data-price="180" data-duration="180">Keratin Treatment</button>
+              <button type="button" class="service-pill" data-price="85" data-duration="90">Bridal Trial</button>
+              <button type="button" class="service-pill" data-price="130" data-duration="120">Bridal Hair (Day)</button>
+              <button type="button" class="service-pill" data-price="38" data-duration="45">Men's Cut & Style</button>
+              <button type="button" class="service-pill" data-price="50" data-duration="60">Men's Cut & Beard</button>
+              <button type="button" class="service-pill" data-price="350" data-duration="240">Extensions (Full)</button>
+            </div>
+            <input type="hidden" id="selected-service" name="service" required>
+            <input type="hidden" id="selected-price" name="price">
+          </div>
+
+          <!-- Step 2: Stylist -->
+          <div class="booking-step">
+            <h4><span>2</span> Choose Your Stylist</h4>
+            <div class="stylist-cards">
+              <div class="stylist-card" data-stylist="Siobhán" data-level="Colour Director">
+                <div class="stylist-avatar"><img src="assets/images/team-1.jpg" alt="Siobhán" loading="lazy"></div>
+                <div class="stylist-name">Siobhán</div>
+                <div class="stylist-level">Colour Director</div>
+              </div>
+              <div class="stylist-card" data-stylist="Declan" data-level="Men's Specialist">
+                <div class="stylist-avatar"><img src="assets/images/team-2.jpg" alt="Declan" loading="lazy"></div>
+                <div class="stylist-name">Declan</div>
+                <div class="stylist-level">Men's Specialist</div>
+              </div>
+              <div class="stylist-card" data-stylist="Aoife" data-level="Bridal Expert">
+                <div class="stylist-avatar"><img src="assets/images/team-3.jpg" alt="Aoife" loading="lazy"></div>
+                <div class="stylist-name">Aoife</div>
+                <div class="stylist-level">Bridal Expert</div>
+              </div>
+              <div class="stylist-card" data-stylist="Conor" data-level="Creative Stylist">
+                <div class="stylist-avatar"><img src="assets/images/team-4.jpg" alt="Conor" loading="lazy"></div>
+                <div class="stylist-name">Conor</div>
+                <div class="stylist-level">Creative Stylist</div>
+              </div>
+              <div class="stylist-card" data-stylist="Niamh" data-level="Treatment Specialist">
+                <div class="stylist-avatar"><img src="assets/images/team-5.jpg" alt="Niamh" loading="lazy"></div>
+                <div class="stylist-name">Niamh</div>
+                <div class="stylist-level">Treatment Specialist</div>
+              </div>
+              <div class="stylist-card" data-stylist="No Preference" data-level="Best Available">
+                <div class="stylist-avatar" style="background:var(--espresso);display:flex;align-items:center;justify-content:center;color:var(--bronze);font-size:1.2rem;width:48px;height:48px;border-radius:50%;margin:0 auto 8px;">★</div>
+                <div class="stylist-name">Any</div>
+                <div class="stylist-level">Best Available</div>
+              </div>
+            </div>
+            <input type="hidden" id="selected-stylist" name="stylist" required>
+          </div>
+
+          <!-- Step 3: Date -->
+          <div class="booking-step">
+            <h4><span>3</span> Select Date</h4>
+            <div class="form-group">
+              <input type="date" class="form-control" id="booking-date" name="date" required style="max-width:280px;"
+                min="" placeholder="Choose a date">
+            </div>
+          </div>
+
+          <!-- Step 4: Time -->
+          <div class="booking-step">
+            <h4><span>4</span> Available Times</h4>
+            <div class="time-slots" id="time-slots">
+              <button type="button" class="time-slot" data-time="09:00">9:00 am</button>
+              <button type="button" class="time-slot" data-time="09:30">9:30 am</button>
+              <button type="button" class="time-slot" data-time="10:00">10:00 am</button>
+              <button type="button" class="time-slot" data-time="10:30">10:30 am</button>
+              <button type="button" class="time-slot unavailable" data-time="11:00">11:00 am</button>
+              <button type="button" class="time-slot" data-time="11:30">11:30 am</button>
+              <button type="button" class="time-slot unavailable" data-time="12:00">12:00 pm</button>
+              <button type="button" class="time-slot" data-time="12:30">12:30 pm</button>
+              <button type="button" class="time-slot" data-time="13:00">1:00 pm</button>
+              <button type="button" class="time-slot unavailable" data-time="13:30">1:30 pm</button>
+              <button type="button" class="time-slot" data-time="14:00">2:00 pm</button>
+              <button type="button" class="time-slot" data-time="14:30">2:30 pm</button>
+              <button type="button" class="time-slot" data-time="15:00">3:00 pm</button>
+              <button type="button" class="time-slot unavailable" data-time="15:30">3:30 pm</button>
+              <button type="button" class="time-slot" data-time="16:00">4:00 pm</button>
+              <button type="button" class="time-slot" data-time="16:30">4:30 pm</button>
+              <button type="button" class="time-slot" data-time="17:00">5:00 pm</button>
+              <button type="button" class="time-slot" data-time="17:30">5:30 pm</button>
+            </div>
+            <input type="hidden" id="selected-time" name="time" required>
+          </div>
+
+          <!-- Step 5: Details -->
+          <div class="booking-step">
+            <h4><span>5</span> Your Details</h4>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div class="form-group">
+                <label for="first-name">First Name *</label>
+                <input type="text" id="first-name" name="first_name" class="form-control" required placeholder="e.g. Siobhán">
+              </div>
+              <div class="form-group">
+                <label for="last-name">Last Name *</label>
+                <input type="text" id="last-name" name="last_name" class="form-control" required placeholder="e.g. Murphy">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-control" required placeholder="your@email.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" class="form-control" required placeholder="085 XXX XXXX">
+            </div>
+            <div class="form-group">
+              <label for="new-client">Are you a new client?</label>
+              <select id="new-client" name="new_client" class="form-control">
+                <option value="yes">Yes — first time at The Hair Company</option>
+                <option value="no">No — I've visited before</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="notes">Special Requests / Notes</label>
+              <textarea id="notes" name="notes" class="form-control" rows="3" placeholder="Any allergies, inspirations, or information we should know..."></textarea>
+            </div>
+          </div>
+
+          <!-- Submit -->
+          <div>
+            <p style="font-size:.82rem; color:var(--mid-gray); margin-bottom:16px;">By clicking "Confirm Booking" you agree to our <a href="terms.html" style="color:var(--bronze);">Terms of Service</a> and <a href="privacy.html" style="color:var(--bronze);">Privacy Policy</a>.</p>
+            <button type="submit" class="btn btn-dark btn-lg" style="width:100%;justify-content:center;">
+              Confirm Booking
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+
+          <!-- Success Message -->
+          <div class="form-success" style="display:none; text-align:center; padding:48px 32px; background:var(--cream); border-radius:var(--radius-lg);">
+            <div style="font-size:3rem; margin-bottom:16px;">✓</div>
+            <h3 style="color:var(--espresso); margin-bottom:8px;">Booking Confirmed!</h3>
+            <p>Thank you! We'll send a confirmation email shortly with all the details of your appointment. We can't wait to see you!</p>
+            <a href="index.html" class="btn btn-dark" style="margin-top:24px;">Back to Home</a>
+          </div>
+
+        </form>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div class="booking-sidebar">
+        <div class="booking-widget">
+          <div class="booking-widget-header">
+            <h3>Your Booking Summary</h3>
+            <p>Selected details will appear here</p>
+          </div>
+          <div class="booking-widget-body">
+            <div class="booking-summary" id="booking-summary">
+              <h4>Appointment Details</h4>
+              <div class="summary-row">
+                <span class="label">Service</span>
+                <span class="value" id="sum-service">Not selected</span>
+              </div>
+              <div class="summary-row">
+                <span class="label">Stylist</span>
+                <span class="value" id="sum-stylist">Not selected</span>
+              </div>
+              <div class="summary-row">
+                <span class="label">Date</span>
+                <span class="value" id="sum-date">Not selected</span>
+              </div>
+              <div class="summary-row">
+                <span class="label">Time</span>
+                <span class="value" id="sum-time">Not selected</span>
+              </div>
+              <div class="summary-row">
+                <span class="label">Duration</span>
+                <span class="value" id="sum-duration">—</span>
+              </div>
+              <hr class="summary-divider">
+              <div class="summary-row summary-total">
+                <span class="label">Estimated Price</span>
+                <span class="value" id="sum-price">—</span>
+              </div>
+            </div>
+
+            <div style="background:rgba(196,149,106,.1); border-radius:var(--radius); padding:16px; margin-bottom:20px;">
+              <p style="font-size:.82rem; color:var(--espresso); margin:0; display:flex; gap:10px; align-items:flex-start;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--bronze)" stroke-width="2" style="flex-shrink:0;margin-top:2px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                Prices shown are starting estimates. Final price confirmed at consultation.
+              </p>
+            </div>
+
+            <div style="text-align:center; border-top: 1px solid var(--light-gray); padding-top: 20px;">
+              <p style="font-size:.82rem; color:var(--mid-gray); margin-bottom:12px;">Prefer to book by phone?</p>
+              <a href="tel:+35391123456" class="btn btn-ghost" style="width:100%;justify-content:center;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8"/></svg>
+                Call 091 123 456
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Opening Hours -->
+        <div style="background:var(--white); border-radius:var(--radius-lg); box-shadow:var(--shadow-sm); padding:28px; margin-top:24px;">
+          <h4 style="color:var(--espresso); font-family:'Raleway',sans-serif; font-size:.8rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; margin-bottom:16px;">Opening Hours</h4>
+          <div class="hours-grid">
+            <div class="hours-row"><span class="day">Mon – Wed</span><span class="time" style="color:var(--espresso);">9am – 6pm</span></div>
+            <div class="hours-row"><span class="day">Thursday</span><span class="time" style="color:var(--espresso);">9am – 8pm</span></div>
+            <div class="hours-row"><span class="day">Friday</span><span class="time" style="color:var(--espresso);">9am – 8pm</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span class="time" style="color:var(--espresso);">9am – 5pm</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span class="time" style="color:var(--mid-gray);">Closed</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Alternative Booking -->
+    <div class="alternative-booking">
+      <h3>Can't Find a Suitable Time?</h3>
+      <p>We also take bookings via phone, WhatsApp, and social media. We'll do our best to find a time that works for you.</p>
+      <div class="alt-options">
+        <a href="tel:+35391123456" class="alt-option">
+          <span class="alt-icon">📞</span>
+          <span class="alt-label">Call Us</span>
+          <span class="alt-sub">091 123 456</span>
+        </a>
+        <a href="https://wa.me/35391123456" target="_blank" rel="noopener" class="alt-option">
+          <span class="alt-icon">💬</span>
+          <span class="alt-label">WhatsApp</span>
+          <span class="alt-sub">Message Us</span>
+        </a>
+        <a href="https://www.instagram.com/thehaircompanygalway" target="_blank" rel="noopener" class="alt-option">
+          <span class="alt-icon">📸</span>
+          <span class="alt-label">Instagram DM</span>
+          <span class="alt-sub">@thehaircompanygalway</span>
+        </a>
+        <a href="mailto:hello@thehaircompany.ie" class="alt-option">
+          <span class="alt-icon">✉️</span>
+          <span class="alt-label">Email Us</span>
+          <span class="alt-sub">hello@thehaircompany.ie</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="logo-text">The Hair Company</span><span class="logo-sub">Galway, Ireland</span><p>Galway's premier hair salon since 2009.</p><div class="footer-social"><a href="#" aria-label="Instagram">&#xf16d;</a><a href="#" aria-label="Facebook">&#xf09a;</a></div></div>
+      <div class="footer-col"><h5>Quick Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a href="services.html#cuts">Cuts & Styling</a></li><li><a href="services.html#colour">Colour & Balayage</a></li><li><a href="services.html#wedding">Bridal Hair</a></li><li><a href="services.html#mens">Men's Grooming</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Shop Street, Galway City</span></div><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2"/></svg><a href="tel:+35391123456">091 123 456</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 The Hair Company, Galway.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div></div>
+  </div>
+</footer>
+
+<div class="mobile-booking-bar">
+  <a href="tel:+35391123456" class="mobile-bar-book" style="background:var(--bronze);">Call to Book</a>
+  <a href="tel:+35391123456" class="mobile-bar-call">091 123 456</a>
+</div>
+<button class="back-to-top" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<div class="cookie-banner"><div class="cookie-inner"><p class="cookie-text">We use cookies. <a href="cookies.html">Learn more</a></p><div class="cookie-btns"><button class="cookie-accept">Accept</button><button class="cookie-decline">Decline</button></div></div></div>
+
+<script src="js/main.js" defer></script>
+<script>
+  // Set min date to today
+  const dateInput = document.getElementById('booking-date');
+  if (dateInput) {
+    const today = new Date();
+    const yyyy = today.getFullYear();
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const dd = String(today.getDate() + 1).padStart(2, '0');
+    dateInput.min = `${yyyy}-${mm}-${dd}`;
+  }
+
+  // Service selection
+  document.querySelectorAll('.service-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.service-pill').forEach(p => p.classList.remove('selected'));
+      pill.classList.add('selected');
+      document.getElementById('selected-service').value = pill.textContent;
+      document.getElementById('selected-price').value = pill.dataset.price;
+      document.getElementById('sum-service').textContent = pill.textContent;
+      document.getElementById('sum-price').textContent = `From €${pill.dataset.price}`;
+      const dur = parseInt(pill.dataset.duration);
+      document.getElementById('sum-duration').textContent = dur >= 60 ? `${Math.floor(dur/60)}h ${dur%60 ? (dur%60)+'m' : ''}`.trim() : `${dur} mins`;
+    });
+  });
+
+  // Stylist selection
+  document.querySelectorAll('.stylist-card').forEach(card => {
+    card.addEventListener('click', () => {
+      document.querySelectorAll('.stylist-card').forEach(c => c.classList.remove('selected'));
+      card.classList.add('selected');
+      document.getElementById('selected-stylist').value = card.dataset.stylist;
+      document.getElementById('sum-stylist').textContent = card.dataset.stylist;
+    });
+  });
+
+  // Time selection
+  document.querySelectorAll('.time-slot:not(.unavailable)').forEach(slot => {
+    slot.addEventListener('click', () => {
+      document.querySelectorAll('.time-slot').forEach(s => s.classList.remove('selected'));
+      slot.classList.add('selected');
+      document.getElementById('selected-time').value = slot.dataset.time;
+      document.getElementById('sum-time').textContent = slot.textContent;
+    });
+  });
+
+  // Date change
+  document.getElementById('booking-date')?.addEventListener('change', function() {
+    const d = new Date(this.value);
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    document.getElementById('sum-date').textContent = d.toLocaleDateString('en-IE', options);
+  });
+
+  // Form submit
+  document.getElementById('booking-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const requiredHidden = ['selected-service', 'selected-stylist', 'selected-time'];
+    let valid = true;
+    requiredHidden.forEach(id => {
+      if (!document.getElementById(id).value) {
+        alert(`Please select a ${id.replace('selected-','').replace('-',' ')}.`);
+        valid = false;
+      }
+    });
+    if (!valid) return;
+    // Simulate success
+    this.style.display = 'none';
+    this.nextElementSibling?.style.setProperty('display','block');
+    document.querySelector('.form-success').style.display = 'block';
+  });
+</script>
+</body>
+</html>

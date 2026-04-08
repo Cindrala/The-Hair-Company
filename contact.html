@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-IE">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact The Hair Company Galway — visit us on Shop Street, call 091 123 456, or send a message. Get directions, opening hours, and our full contact details.">
+  <meta name="keywords" content="contact hair salon Galway, The Hair Company contact, hair salon Galway location, hair salon Shop Street Galway">
+  <link rel="canonical" href="https://thehaircompany.ie/contact.html">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <title>Contact Us | The Hair Company Galway</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+    .contact-form-wrap { }
+    .contact-info-wrap { }
+    .contact-card { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); overflow: hidden; }
+    .contact-card-header { background: var(--espresso); padding: 32px; }
+    .contact-card-header h3 { color: var(--white); margin-bottom: 6px; }
+    .contact-card-header p { color: rgba(255,255,255,.65); margin: 0; font-size: .9rem; }
+    .contact-card-body { padding: 32px; }
+    .contact-detail { display: flex; gap: 20px; margin-bottom: 32px; align-items: flex-start; }
+    .contact-detail-icon { width: 48px; height: 48px; background: var(--cream); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--bronze); flex-shrink: 0; }
+    .contact-detail-text h4 { color: var(--espresso); font-family: 'Raleway',sans-serif; font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+    .contact-detail-text p, .contact-detail-text a { color: var(--mid-gray); font-size: .95rem; }
+    .contact-detail-text a:hover { color: var(--bronze); }
+    .map-full { height: 400px; border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); margin-top: 60px; }
+    .map-full iframe { width: 100%; height: 100%; border: 0; }
+    .transport-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-top: 32px; }
+    .transport-item { background: var(--cream); border-radius: var(--radius); padding: 20px; text-align: center; }
+    .transport-item .t-icon { font-size: 1.8rem; margin-bottom: 8px; }
+    .transport-item h4 { font-size: .9rem; color: var(--espresso); margin-bottom: 4px; }
+    .transport-item p { font-size: .8rem; margin: 0; }
+    @media (max-width: 900px) { .contact-layout { grid-template-columns: 1fr; } .transport-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="nav-inner">
+      <a href="index.html" class="nav-logo"><span class="logo-text">The Hair Company</span><span class="logo-sub">Galway, Ireland</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <a href="tel:+35391123456" class="nav-tel"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8"/></svg>091 123 456</a>
+      <a href="booking.html" class="btn btn-primary nav-cta">Book Now</a>
+      <button class="nav-hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+<div class="nav-drawer">
+  <button class="drawer-close">&#x2715;</button>
+  <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="gallery.html">Gallery</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+  <a href="booking.html" class="btn btn-primary" style="margin-top:8px;">Book Appointment</a>
+  <a href="tel:+35391123456" class="drawer-tel">091 123 456</a>
+</div>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Contact</span></div>
+    <span class="section-label">Get in Touch</span>
+    <h1>We'd Love to Hear from You</h1>
+    <p>Questions, enquiries, or ready to book? We're here to help. Find all our contact details, location, and opening hours below.</p>
+  </div>
+</div>
+
+<!-- CONTACT CONTENT -->
+<section class="section">
+  <div class="container">
+    <div class="contact-layout">
+
+      <!-- CONTACT FORM -->
+      <div class="contact-form-wrap">
+        <span class="section-label">Send a Message</span>
+        <h2 class="section-title" style="margin-bottom:2rem;">How Can We Help?</h2>
+
+        <form id="contact-form" data-validate action="#" method="POST">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+            <div class="form-group">
+              <label for="c-first">First Name *</label>
+              <input type="text" id="c-first" name="first_name" class="form-control" required placeholder="Your first name">
+            </div>
+            <div class="form-group">
+              <label for="c-last">Last Name *</label>
+              <input type="text" id="c-last" name="last_name" class="form-control" required placeholder="Your last name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="c-email">Email Address *</label>
+            <input type="email" id="c-email" name="email" class="form-control" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="c-phone">Phone Number</label>
+            <input type="tel" id="c-phone" name="phone" class="form-control" placeholder="085 XXX XXXX">
+          </div>
+          <div class="form-group">
+            <label for="c-subject">Subject</label>
+            <select id="c-subject" name="subject" class="form-control">
+              <option value="">Select a subject...</option>
+              <option value="booking">Booking Enquiry</option>
+              <option value="bridal">Bridal / Wedding Enquiry</option>
+              <option value="services">Services & Pricing</option>
+              <option value="extensions">Hair Extensions Consultation</option>
+              <option value="general">General Question</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="c-message">Your Message *</label>
+            <textarea id="c-message" name="message" class="form-control" rows="5" required placeholder="Tell us how we can help..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark btn-lg" style="width:100%;justify-content:center;">
+            Send Message
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+
+          <div class="form-success" style="display:none; text-align:center; padding:48px 32px; background:var(--cream); border-radius:var(--radius-lg); margin-top:16px;">
+            <div style="font-size:3rem; margin-bottom:16px;">✉️</div>
+            <h3 style="color:var(--espresso); margin-bottom:8px;">Message Sent!</h3>
+            <p>Thank you for getting in touch. We typically respond within a few hours during opening times. See you soon!</p>
+            <a href="booking.html" class="btn btn-dark" style="margin-top:24px;">Book an Appointment</a>
+          </div>
+        </form>
+      </div>
+
+      <!-- CONTACT INFO -->
+      <div class="contact-info-wrap">
+        <div class="contact-card">
+          <div class="contact-card-header">
+            <h3>Contact Information</h3>
+            <p>Multiple ways to reach us — choose what suits you best.</p>
+          </div>
+          <div class="contact-card-body">
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <h4>Our Address</h4>
+                <p>Shop Street<br>Galway City Centre<br>County Galway<br>H91 XXXX, Ireland</p>
+                <a href="https://maps.google.com/?q=Shop+Street+Galway" target="_blank" rel="noopener" style="color:var(--bronze);font-weight:600;font-size:.85rem;display:inline-flex;align-items:center;gap:6px;margin-top:8px;">
+                  Get Directions
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.06 1.18 2 2 0 012.03 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14.92z"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <h4>Phone</h4>
+                <a href="tel:+35391123456">091 123 456</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <h4>Email</h4>
+                <a href="mailto:hello@thehaircompany.ie">hello@thehaircompany.ie</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-detail-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              </div>
+              <div class="contact-detail-text">
+                <h4>Opening Hours</h4>
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px 16px;margin-top:4px;">
+                  <span style="color:var(--mid-gray);font-size:.9rem;">Monday</span><span style="font-weight:600;font-size:.9rem;color:var(--espresso);">9am – 6pm</span>
+                  <span style="color:var(--mid-gray);font-size:.9rem;">Tuesday</span><span style="font-weight:600;font-size:.9rem;color:var(--espresso);">9am – 6pm</span>
+                  <span style="color:var(--mid-gray);font-size:.9rem;">Wednesday</span><span style="font-weight:600;font-size:.9rem;color:var(--espresso);">9am – 6pm</span>
+                  <span style="color:var(--mid-gray);font-size:.9rem;">Thursday</span><span style="font-weight:600;font-size:.9rem;color:var(--espresso);">9am – 8pm</span>
+                  <span style="color:var(--mid-gray);font-size:.9rem;">Friday</span><span style="font-weight:600;font-size:.9rem;color:var(--espresso);">9am – 8pm</span>
+                  <span style="color:var(--mid-gray);font-size:.9rem;">Saturday</span><span style="font-weight:600;font-size:.9rem;color:var(--espresso);">9am – 5pm</span>
+                  <span style="color:var(--mid-gray);font-size:.9rem;">Sunday</span><span style="font-weight:600;font-size:.9rem;color:var(--mid-gray);">Closed</span>
+                </div>
+              </div>
+            </div>
+            <div style="border-top:1px solid var(--light-gray); padding-top:24px; display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="https://www.instagram.com/thehaircompanygalway" target="_blank" rel="noopener" class="btn btn-ghost" style="flex:1;justify-content:center;">Instagram</a>
+              <a href="https://www.facebook.com/thehaircompanygalway" target="_blank" rel="noopener" class="btn btn-ghost" style="flex:1;justify-content:center;">Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MAP -->
+    <div class="map-full">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2387.4760213370186!2d-9.060012323264437!3d53.27262487228476!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x485b96f04571e003%3A0x5e7ef7ad3bd8ab5b!2sShop%20St%2C%20Galway!5e0!3m2!1sen!2sie!4v1710000000000!5m2!1sen!2sie"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="The Hair Company Galway — Google Maps"
+        aria-label="Google Maps location of The Hair Company in Galway">
+      </iframe>
+    </div>
+
+    <!-- GETTING HERE -->
+    <div style="margin-top:60px;">
+      <div class="text-center">
+        <span class="section-label">How to Find Us</span>
+        <h2 class="section-title">Getting to The Hair Company</h2>
+        <p class="section-desc">We're conveniently located in the heart of Galway city — easy to reach by bus, foot, or car.</p>
+      </div>
+      <div class="transport-grid" style="margin-top:40px;">
+        <div class="transport-item">
+          <div class="t-icon">🚶</div>
+          <h4>On Foot</h4>
+          <p>Just a 5-minute walk from Eyre Square and close to the Latin Quarter and Spanish Arch.</p>
+        </div>
+        <div class="transport-item">
+          <div class="t-icon">🚌</div>
+          <h4>By Bus</h4>
+          <p>Galway city bus routes stop at Eyre Square — a 5-minute walk to our door. Bus Éireann routes also serve the city centre.</p>
+        </div>
+        <div class="transport-item">
+          <div class="t-icon">🚗</div>
+          <h4>By Car</h4>
+          <p>Paid parking available at Eyre Square Shopping Centre and Jurys Inn car parks, both a short walk away.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BOOK CTA -->
+<div class="booking-banner">
+  <div class="container">
+    <div class="booking-banner-inner">
+      <div>
+        <h2>Ready to Visit?</h2>
+        <p>Book your appointment online or give us a call — we can't wait to meet you.</p>
+      </div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="booking.html" class="btn btn-outline btn-lg">Book Online</a>
+        <a href="tel:+35391123456" class="btn btn-dark btn-lg">Call 091 123 456</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><span class="logo-text">The Hair Company</span><span class="logo-sub">Galway, Ireland</span><p>Galway's premier hair salon since 2009.</p><div class="footer-social"><a href="#" aria-label="Instagram">&#xf16d;</a><a href="#" aria-label="Facebook">&#xf09a;</a></div></div>
+      <div class="footer-col"><h5>Quick Links</h5><ul class="footer-links"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="booking.html">Book Online</a></li></ul></div>
+      <div class="footer-col"><h5>Services</h5><ul class="footer-links"><li><a href="services.html#cuts">Cuts & Styling</a></li><li><a href="services.html#colour">Colour & Balayage</a></li><li><a href="services.html#wedding">Bridal Hair</a></li><li><a href="services.html#mens">Men's Grooming</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Shop Street, Galway City</span></div><div class="footer-contact-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2"/></svg><a href="tel:+35391123456">091 123 456</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 The Hair Company, Galway. All rights reserved.</p><div class="footer-bottom-links"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div></div>
+  </div>
+</footer>
+
+<div class="mobile-booking-bar">
+  <a href="booking.html" class="mobile-bar-book">Book Appointment</a>
+  <a href="tel:+35391123456" class="mobile-bar-call">Call Now</a>
+</div>
+<button class="back-to-top" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg></button>
+<div class="cookie-banner"><div class="cookie-inner"><p class="cookie-text">We use cookies. <a href="cookies.html">Learn more</a></p><div class="cookie-btns"><button class="cookie-accept">Accept</button><button class="cookie-decline">Decline</button></div></div></div>
+<script src="js/main.js" defer></script>
+</body>
+</html>

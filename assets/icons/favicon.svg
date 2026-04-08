@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="12" fill="#2C1810"/>
+  <!-- Scissors icon representing hair company -->
+  <g fill="none" stroke="#C4956A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" transform="translate(12, 10)">
+    <circle cx="8" cy="8" r="5"/>
+    <circle cx="8" cy="34" r="5"/>
+    <line x1="32" y1="6" x2="11.5" y2="28"/>
+    <line x1="22.5" y1="22" x2="32" y2="36"/>
+    <line x1="11.5" y1="14" x2="16" y2="20"/>
+  </g>
+  <!-- THC initials -->
+</svg>
