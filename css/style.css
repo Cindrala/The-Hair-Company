@@ -296,7 +296,7 @@ p  { color: var(--mid-gray); font-size: 1.05rem; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/images/hair salon.jpg') center/cover no-repeat;
+  background: url('../assets/images/hair%20salon.jpg') center/cover no-repeat;
   z-index: 0;
 }
 .hero-bg::before {
